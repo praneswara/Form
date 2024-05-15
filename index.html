@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task19</title>
+    <style>
+        p{
+            color: red;
+        }
+        #p6{
+            color: blue;
+        }
+        .main{
+            background-color: rosybrown;
+            height: 600px;
+            width: 700px;
+        }
+        label,button,p{
+            margin-left: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+    <label for="name">Name:</label>
+    <input type="text" id="f1"><br>
+    <p id="p1"></p>
+    <br><br>
+    <label for="Email">Email:</label>
+    <input type="email" id="f2"><br>
+    <p id="p2"></p>
+    <br><br>
+    <label for="pass">Password:</label>
+    <input type="password" id="f3"><br>
+    <p id="p3"></p>
+    <br><br>
+    <label for="repass">Re Enter:</label>
+    <input type="password" id="f4"><br>
+    <p id="p4"></p>
+    <p id="p7"></p>
+    <br><br>
+    <label for="contact">Contact:</label>
+    <input type="tel" id="f5"><br>
+    <p id="p5"></p>
+    <br><br>
+    <button onclick="myfunc()">SUBMIT</button><br><br><br><br>
+    <p id="p6" style="text-align: center;"></p>
+    </div>
+</body>
+    <script>
+        function myfunc()
+        {
+            var a=document.getElementById("f1").value
+            var b=document.getElementById("f2").value
+            var c=document.getElementById("f3").value
+            var d=document.getElementById("f4").value
+            var e=document.getElementById("f5").value
+            var p1=document.getElementById("p1")
+            var p2=document.getElementById("p2")
+            var p3=document.getElementById("p3")
+            var p4=document.getElementById("p4")
+            var p5=document.getElementById("p5")
+            var f=/^[0-9]{10}$/
+            var g=/^[A-Za-z]/
+            if(a.length!=0)
+            {
+                if(a.match(g))
+                {
+                    p1.innerHTML="accepted"
+                }
+                else
+                {
+                    p1.innerHTML="not accepted"
+                }
+                
+            }
+            else
+            {
+                p1.innerHTML="name must be fill out"
+            }
+            if(b.length!=0)
+            {
+                if(b.endswith("@gamil.com"))
+                {
+                    p1.innerHTML="accepted"
+                }
+                else
+                {
+                    p1.innerHTML="not accepted"
+                }
+            }
+            else
+            {
+                p2.innerHTML="mail must be fill out"
+            }
+            if(c.length!=0)
+            {
+                p3.innerHTML=""
+            }
+            else
+            {
+                p3.innerHTML="password must be fill out"
+            }
+            if(d.length!=0)
+            {
+                if(c!=d)
+                {
+                    p7.innerHTML="not matching"
+                }
+                else if(c=d)
+                {
+                    p7.innerHTML="matching"
+                }
+            }
+            else
+                {
+                p4.innerHTML="confirm password must be fill out"
+                }
+            if(e.length!=0)
+            {
+                if(e.match(f))
+                {
+                    p5.innerHTML="accepted"
+                }
+                else
+                {
+                    p5.innerHTML="not accepted"
+                }
+            }
+            else
+            {
+                p5.innerHTML="mobile number must be fill out"
+            }
+            
+        }
+    </script>
+</html>
